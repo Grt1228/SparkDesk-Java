@@ -17,8 +17,8 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Chat {
     /**
-     * 取值为[general,generalv2]
-     * 指定访问的领域,general指向V1.5版本 generalv2指向V2版本。注意：不同的取值对应的url也不一样！
+     * 取值为[general,generalv2,generalv3]
+     * 指定访问的领域,general指向V1.5版本,generalv2指向V2版本,generalv3指向V3版本 。注意：不同的取值对应的url也不一样！
      */
     private String domain;
     /**
@@ -26,7 +26,11 @@ public class Chat {
      */
     private double temperature;
     /**
-     * 取值为[1,4096]，默认为2048
+     * 模型回答的tokens的最大长度
+     * <p>
+     * V1.5取值为[1,4096]
+     * V2.0取值为[1,8192]，默认为2048。
+     * V3.0取值为[1,8192]，默认为2048。
      */
     @JsonProperty("max_tokens")
     private Integer maxTokens;
