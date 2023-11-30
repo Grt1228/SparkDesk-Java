@@ -1,6 +1,7 @@
 package com.unfbx.sparkdesk.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 /**
@@ -24,6 +25,16 @@ public class Text {
      * 结果序号，取值为[0,10]; 当前为保留字段，开发者可忽略
      */
     private Integer index;
+    /**
+     * /
+     */
+    @JsonProperty("content_type")
+    private String contentType;
+    /**
+     * function call 返回结果
+     */
+    @JsonProperty("function_call")
+    private FunctionCall functionCall;
 
     @Getter
     public enum Role {
